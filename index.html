@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>TEST</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script src="test.js"></script>
+</head>
+<body  ng-app="httpExample">
+
+<div ng-controller="testController">
+
+	<!-- <select ng-model="metodo">
+		<option>seleccione</option>
+		<option>GET</option>
+		<option>POST</option>
+		<option>PUT</option>
+	</select> -->
+	<input type="text" ng-model="url" size="80"/>
+	<button id="btnEnviar" ng-click="enviar()">Enviar {{ method }}</button><br>
+
+
+
+	<textarea ng-if="textarea == 'true'" cols="78" rows="10" ng-model="$parent.rawData"></textarea><br>
+
+	<button id="btnGet" ng-click="updateModel('GET')">GET</button>
+	<button id="btnPost" ng-click="updateModel('POST')">POST</button>
+	<button id="btnPut" ng-click="updateModel('PUT')">PUT</button>
+
+	<button id="btnJsonp" ng-click="updateModel('JSONP')">JSONP</button>
+
+	<pre>http status code: {{status}}</pre>
+  	<pre>http response data: {{data}}</pre>
+
+</div>
+
+	
+</body>
+</html>
